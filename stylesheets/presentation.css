@@ -50,9 +50,11 @@ section {
 }
 
 .content__main {
-    display: inline-block;
-    margin-left: 50%;
-    transform: translateX(-50%);
+    width: -moz-fit-content;    /* Firefox */
+    width: -webkit-fit-content; /* Chrome */
+    width: fit-content; /* Chrome */
+    max-width: 640px;
+    margin: auto;
 }
 
 
@@ -62,7 +64,7 @@ h1,
 h2,
 h3 {
     padding: 20px 40px;
-    margin: -20px -40px 20px;
+    margin: -20px -40px 0;
     background: #F01422;
     background: linear-gradient(to bottom, #F01422, #D2111E);
 
@@ -72,14 +74,14 @@ h3 {
     line-height: 1.2;
 }
 h1 {
-    font-size: 2em;
+    font-size: 1.2em;
 }
-h1 > small {
-    font-size: 0.5em;
+h1 > .big {
+    font-size: 1.6em;
     display: block;
 }
 h2 {
-    font-size: 1.6em;
+    font-size: 1.2em;
     text-align: center;
 }
 h3 {
@@ -125,8 +127,13 @@ blockquote small {
     text-align: right;
 }
 
+video {
+    max-width: 100%;
+}
+
 .content--card h1,
 .content--card h2 {
+    margin-bottom: -20px;
     color: white;
 }
 

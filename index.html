@@ -16,8 +16,8 @@
     <section>
         <div class="content content--card">
             <h1>
-                <small>Les performances de rendu</small>
-                CSS
+                Les performances de rendu
+                <span class="big">CSS</span>
             </h1>
             <small class="classy">15 min pour comprendre les enjeux !</small>
         </div>
@@ -30,7 +30,7 @@
             <div class="content__main">
                 <p>Pour obtenir des interactions fluides :</p>
                 <ul>
-                    <li>Défilement (scroll)</li>
+                    <li>Défilement <em>(scroll)</em></li>
                     <li>Transitions et animations CSS</li>
                     <li>Manipulation du DOM en JavaScript</li>
                 </ul>
@@ -80,6 +80,128 @@
     </section>
 
 
+    <section>
+        <div class="content content--card">
+            <h1>Thomas Zilliox</h1>
+            <small class="classy">Développeur freelance</small>
+            <div>Expert CSS : maintenabilité et performance</div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content content--card">
+            <h1>Comment les navigateurs</h1>
+            <small class="classy">passent</small>
+            <div>du CSS aux pixels</div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>Du CSS aux pixels</h2>
+            <div class="content__main">
+                <p>
+                    Les navigateurs web ont, <em>à peu près,</em><br>
+                    deux fils d'exécution pour le rendu :
+                </p>
+                <ul>
+                    <li>Le principal <em>(Main)</em></li>
+                    <li>Celui de composition <em>(Compositor)</em></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>Du CSS aux pixels</h2>
+            <div class="content__main">
+                <p>
+                    Le fil principal se charge de :
+                </p>
+                <ul>
+                    <li>L'exécution de JavaScript</li>
+                    <li>Calculer les règles CSS de chaque éléments</li>
+                    <li>La mise en page <em>(Layout / Reflow)</em></li>
+                    <li>Calculer chaque pixels <em>(Painting / Draw)</em></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>Du CSS aux pixels</h2>
+            <div class="content__main">
+                <p>
+                    Le fil de composition se charge de :
+                </p>
+                <ul>
+                    <li>Dessiner les pixels sur l'écran</li>
+                    <li>Déterminer les parties visibles de la page</li>
+                    <li>Déplacer les éléments lors du défilement</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>Du CSS aux pixels</h2>
+            <div class="content__main">
+                <p>
+                    A chaque changement, on invalide la suite de la chaîne
+                </p>
+                <img src="images/processing-pipeline.svg" />
+                Source <a href="https://hpbn.co/primer-on-web-performance/">bit.ly/process-pipeline</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>Du CSS aux pixels</h2>
+            <div class="content__main">
+                <p>
+                    A chaque changement, les modifications doivent prendre moins de 16ms (60fps)
+                </p>
+                <video autoplay muted loop>
+                    <source src="videos/framerate-light.mp4" type="video/mp4">
+                </video>
+                Source <a href="https://www.youtube.com/watch?v=pfiHFqnPLZ4">youtu.be/pfiHFqnPLZ4</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <section>
+        <div class="content">
+            <h2>Bibliographie</h2>
+            <div class="content__main">
+                <ul>
+                    <li>
+                        <a href="http://blogs.adobe.com/webplatform/2014/03/18/css-animations-and-transitions-performance/">
+                            CSS animations and transitions performance: looking inside the browser,        
+                        </a>
+                        <a href="https://twitter.com/mvujovic">
+                            Max Vujovic
+                        </a> (Adobe),
+                        18 mars 2014
+                    </li>
+                    <li>Déterminer les parties visibles de la page</li>
+                    <li>Déplacer les éléments lors du défilement</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    
 </article>
 <script src="javascripts/bespoke.js"></script>
 <script src="javascripts/presentation.js"></script>
