@@ -1,0 +1,165 @@
+
+/* Slides
+ ====================================================*/
+body {
+    background: #FFF;
+    font-family: "Source Sans Pro";
+    color: #141414;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    background-position: center center;
+    background-size: cover;
+    font-size: 3em;
+    width: 100%;
+    display: none;
+}
+
+.bespoke-active {
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.content {
+    display: table-cell;
+    padding: 1em;
+    vertical-align: top;
+    text-align: center;
+}
+
+.content--card {
+    vertical-align: middle;
+}
+
+
+/* Content styling
+ ====================================================*/
+.bespoke-slide h1,
+.bespoke-slide h2 {
+    margin: 0;
+}
+.bespoke-slide blockquote {
+    font-family: Baskerville;
+    font-style: italic;
+    margin: 0;
+}
+.bespoke-slide blockquote small {
+    margin-top: 1em;
+    display: block;
+    text-align: right;
+}
+.bespoke-slide ul {
+    font-size: 0.8em;
+    text-align: left;
+    display: inline-block;
+    margin: 0 auto;
+    list-style-type: none;
+}
+
+section a {
+    font-weight: 700;
+    color: #0cf;
+    text-decoration: none;
+}
+
+
+/* Live coding
+ ====================================================*/
+.demoDescription {
+    font-size: 22px;
+    color: #666;
+    margin-top: 5px;
+}
+.demoExplanation {
+    color: #666;
+    font-size: 22px;
+    width: 700px;
+    text-align: left;
+    margin: 5px auto;
+}
+
+.important {
+    border: 1px #888 solid;
+    background: #F5F2F0;
+    padding: 1em;
+    color: #141414;
+}
+.important > span {
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+.demo {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    max-width: 1000px;
+    margin: 2em auto;
+    border-spacing: 20px 0;
+    font-size: 18px;
+}
+
+.demoCode,
+.demoShow {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+    text-align: left;
+}
+
+.demoCode pre {
+    margin-top: 0;
+}
+
+code.liveCoding {
+    display: block;
+    outline: none;
+}
+
+div.green,
+div.red,
+div.blue {
+    padding: 1em;
+}
+
+
+.green {
+    background: yellowgreen;
+}
+
+.red {
+    background: tomato;
+}
+
+.blue {
+    background: deepskyblue;
+}
+
+
+/* Utils for content
+ ====================================================*/
+section .underline {
+    border-bottom: .1em solid white
+}
+
+section .strikethrough {
+    text-decoration: line-through;
+    color: #999
+}
+
+section .classy {
+    font-family: Baskerville;
+    font-style: italic;
+}
+
+section .code {
+    font-family: "Source Code Pro";
+    font-size: .8125em;
+    font-weight: 700;
+    color: #0cf
+}

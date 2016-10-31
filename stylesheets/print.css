@@ -1,0 +1,15 @@
+
+/* Slides
+ ====================================================*/
+section,
+.bespoke-slide {
+    display: table;
+    position: static;
+    page-break-after: always;
+    width: 100%;
+    height: 100vh;
+}
+
+@page {
+    margin: 0;
+}

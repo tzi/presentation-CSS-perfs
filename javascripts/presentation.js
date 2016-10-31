@@ -1,0 +1,1 @@
+bespoke.horizontal.from('article');
