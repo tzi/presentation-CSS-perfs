@@ -15,25 +15,67 @@
 
     <section>
         <div class="content content--card">
-            <h1>Les performances CSS de rendu</h1>
-            <small class="classy">en 15 min !</small>
+            <h1>
+                <small>Les performances de rendu</small>
+                CSS
+            </h1>
+            <small class="classy">15 min pour comprendre les enjeux !</small>
         </div>
     </section>
 
 
     <section>
         <div class="content">
-            <h2>0. Les marges</h2>
-            <div class="demoExplanation">
-                <div class="important">
-                    <p>Les marges fusionnent avec celles des éléments frères si : </p>
-                    <ol>
-                        <li>elles sont verticales</li>
-                        <li>il s'agit d'éléments block</li>
-                    </ol>
-                </div>
-                <p>Les marges peuvent aussi fusionner entre un élément parent et ses enfants.</p>
+            <h2>Pourquoi les performances CSS ?</h2>
+            <div class="content__main">
+                <p>Pour obtenir des interactions fluides :</p>
+                <ul>
+                    <li>Défilement (scroll)</li>
+                    <li>Transitions et animations CSS</li>
+                    <li>Manipulation du DOM en JavaScript</li>
+                </ul>
             </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>La conclusion à retenir</h2>
+            <div class="content__main">
+                <p>
+                    Vos transitions et animations CSS<br>
+                    doivent être limitées aux propriétés :
+                </p>
+                <ul>
+                    <li>opacity</li>
+                    <li>transform<br>
+                        <small><em>(translation, rotation, redimensionnement, ...)</em></small>
+                    </li>
+                    <li>filter*<br>
+                        <small><em>(flou, luminuosité, contraste, niveau de gris, ...)</em></small>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>La conclusion à retenir</h2>
+            <div class="content__main">
+                <p>
+                    Vos transitions et animations CSS<br>
+                    doivent être limitées aux propriétés :
+                </p>
+                <ul>
+                    <li>opacity</li>
+                    <li>transform</li>
+                    <li>filter*</li>
+                </ul>
+            </div>
+            <img style="position: fixed; right: 0; bottom: 0;" width="300" src="images/marteau.jpg" />
         </div>
     </section>
 
