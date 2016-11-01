@@ -127,8 +127,10 @@ blockquote small {
     text-align: right;
 }
 
+img,
 video {
     max-width: 100%;
+    margin: 0 auto;
 }
 
 .content--card h1,

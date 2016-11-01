@@ -182,7 +182,7 @@
 
     <section>
         <div class="content">
-            <h2>La mise en page <em>(Layout / Reflow)</em></h2>
+            <h2>1. La mise en page <em>(Layout / Reflow)</em></h2>
             <div class="content__main">
                 <p>
                     C'est l'algorithme qui détermine la position et la taille des boîtes
@@ -199,7 +199,7 @@
 
     <section>
         <div class="content">
-            <h2>La mise en page <em>(Layout / Reflow)</em></h2>
+            <h2>1. La mise en page <em>(Layout / Reflow)</em></h2>
             <div class="content__main">
                 <p>
                     Elle est déclanchée par :
@@ -221,10 +221,10 @@
 
     <section>
         <div class="content">
-            <h2>La mise en page <em>(Layout / Reflow)</em></h2>
+            <h2>1. La mise en page <em>(Layout / Reflow)</em></h2>
             <div class="content__main">
                 <p></p>
-                <video autoplay muted>
+                <video muted controls>
                     <source src="videos/reflow.mp4" type="video/mp4">
                 </video>
                 Source <a href="http://pixeln3rd.github.io/cssreflow/">bit.ly/cssreflow</a>
@@ -235,7 +235,7 @@
 
     <section>
         <div class="content">
-            <h2>La mise en page <em>(Layout / Reflow)</em></h2>
+            <h2>1. La mise en page <em>(Layout / Reflow)</em></h2>
             <div class="content__main">
                 <p>Détecter les reflows (Console de Firefox)</p>
                 <video autoplay muted loop>
@@ -248,7 +248,7 @@
 
     <section>
         <div class="content">
-            <h2>Calculer chaque pixels <em>(Painting / Draw)</em></h2>
+            <h2>2. Calculer chaque pixels <em>(Painting / Draw)</em></h2>
             <div class="content__main">
                 <p>Applique tous les styles visuels :</p>
                 <ul>
@@ -264,7 +264,7 @@
 
     <section>
         <div class="content">
-            <h2>La mise en page <em>(Layout / Reflow)</em></h2>
+            <h2>2. Calculer chaque pixels <em>(Painting / Draw)</em></h2>
             <div class="content__main">
                 <p>Détecter les repaints (Console de Chrome)</p>
                 <video autoplay muted loop>
@@ -277,7 +277,7 @@
 
     <section>
         <div class="content">
-            <h2>Calculer chaque pixels <em>(Painting / Draw)</em></h2>
+            <h2>2. Calculer chaque pixels <em>(Painting / Draw)</em></h2>
             <div class="content__main">
                 <p>Investiguer les repaints (Timeline de Chrome)</p>
                 <img src="images/paint.png" />
@@ -285,24 +285,55 @@
         </div>
     </section>
 
-    
+
     <section>
         <div class="content">
-            <h2>Bibliographie</h2>
+            <h2>3. Composition</h2>
             <div class="content__main">
+                <p>La composition GPU est très rapide pour :</p>
                 <ul>
-                    <li>
-                        <a href="http://blogs.adobe.com/webplatform/2014/03/18/css-animations-and-transitions-performance/">
-                            CSS animations and transitions performance: looking inside the browser,        
-                        </a>
-                        <a href="https://twitter.com/mvujovic">
-                            Max Vujovic
-                        </a> (Adobe),
-                        18 mars 2014
+                    <li>Dessiner une image à l'écran</li>
+                    <li>Appliquer une opération sur une image<br>
+                        <small>opération matricielle, mélange d'images, transparence, etc.</small>
                     </li>
-                    <li>Déterminer les parties visibles de la page</li>
-                    <li>Déplacer les éléments lors du défilement</li>
+                    <li>Dessiner la même image encore et encore</li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>3. Composition</h2>
+            <div class="content__main">
+                <p>Le fonctionnement normal :</p>
+                <img src="images/gpu-init.png" />
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>3. Composition</h2>
+            <div class="content__main">
+                <p>Lors d'une transition sur la hauteur :</p>
+                <img src="images/gpu-height.png" />
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>3. Composition</h2>
+            <div class="content__main">
+                <p>Lors d'une transition sur une transformation :</p>
+                <img src="images/gpu-transform.png" />
+                Source <a href="http://blogs.adobe.com/webplatform/2014/03/18/css-animations-and-transitions-performance/">
+                    bit.ly/inside-the-browser
+                </a>
             </div>
         </div>
     </section>
