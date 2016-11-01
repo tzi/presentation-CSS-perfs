@@ -82,6 +82,10 @@
                 </ul>
             </div>
         </div>
+        <div class="img-corner">
+            <img width="300" src="images/marteau.png" />
+            <img  width="300" src="images/clou.png" />
+        </div>
     </section>
 
 
@@ -115,7 +119,7 @@
         </div>
         <div class="img-corner">
             <img width="300" src="images/marteau.png" />
-            <img width="300" src="images/clou.png" />
+            <img style="margin-bottom: -40px" width="300" src="images/clou.png" />
         </div>
     </section>
 
@@ -150,23 +154,11 @@
                     <li>Le principal <em>(Main)</em></li>
                     <li>Celui de composition <em>(Compositor)</em></li>
                 </ul>
-            </div>
-        </div>
-    </section>
-
-
-    <section>
-        <div class="content">
-            <h2>Du CSS aux pixels</h2>
-            <div class="content__main">
-                <p>
-                    Le fil de composition se charge de
-                </p>
-                <ul>
-                    <li>Dessiner les pixels sur l'écran</li>
-                    <li>Déplacer les éléments lors du défilement</li>
-                </ul>
-                <img src="images/navigateur1b.svg" />
+                <cite>&mdash; Adobe,
+                    <a href="http://blogs.adobe.com/webplatform/2014/03/18/css-animations-and-transitions-performance/">
+                        bit.ly/inside-the-browser
+                    </a>
+                </cite>
             </div>
         </div>
     </section>
@@ -185,19 +177,6 @@
                     <li>Calculer chaque pixels <em>(Painting / Draw)</em></li>
                 </ul>
                 <img src="images/navigateur2.svg" />
-            </div>
-        </div>
-    </section>
-
-
-    <section>
-        <div class="content">
-            <h2>Du CSS aux pixels</h2>
-            <div class="content__main">
-                <p>
-                    A chaque changement, on repart à un endroit précis de la chaîne
-                </p>
-                <img src="images/navigateur2b.svg" />
                 <cite>&mdash; Ilya Grigorik,
                     <a href="https://hpbn.co/primer-on-web-performance/">bit.ly/process-pipeline</a>
                 </cite>
@@ -211,7 +190,30 @@
             <h2>Du CSS aux pixels</h2>
             <div class="content__main">
                 <p>
-                    A chaque changement, les modifications doivent prendre moins de 16ms (60fps)
+                    Le fil de composition se charge principalement de dessiner les pixels sur l'écran
+                </p>
+                <img src="images/navigateur2c.svg" />
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content content--card">
+            <h1>
+                Objectif
+                <span class="big">16ms</span>
+            </h1>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>Objectif 16ms</h2>
+            <div class="content__main">
+                <p>
+                    Chaque frame doit prendre maximum 16ms pour garder une fréquence d'images à 60fps
                 </p>
                 <video  muted loop controls>
                     <source src="videos/framerate-light.mp4" type="video/mp4">
@@ -225,24 +227,24 @@
 
 
     <section>
-        <div class="content content--card">
-            <h1>Zoom sur</h1>
-            <div>1. La mise en page <em>(Layout / Reflow)</em></div>
+        <div class="content">
+            <h2>Objectif 16ms</h2>
+            <div class="content__main">
+                <p>Le premier rendu d'un élément</p>
+                <img src="images/NavigateurAnim1.svg" />
+            </div>
         </div>
     </section>
 
 
     <section>
         <div class="content">
-            <h2>1. La mise en page <em>(Layout / Reflow)</em></h2>
+            <h2>Objectif 16ms</h2>
             <div class="content__main">
-                <img src="images/navigateur3.svg" />
+                <p>Lorsqu'on anime la largeur d'un élément, on déclenche un re-layout</p>
+                <img src="images/NavigateurAnim2.svg" />
                 <p>
-                    C'est l'algorithme qui détermine la position et la taille des boîtes
-                    en fonction de leurs interactions avec leurs boîtes frères et ancètres.
-                </p>
-                <p>
-                    Aucune action utilisateur n'est autorisé lors de la mise en page.
+                    Aucune autre action utilisateur n'est possible pendant la mise en page.
                 </p>
                 <cite>&mdash; Google,
                     <a href="https://developers.google.com/speed/articles/reflow">bit.ly/layout-engine</a>
@@ -254,14 +256,12 @@
 
     <section>
         <div class="content">
-            <h2>1. La mise en page <em>(Layout / Reflow)</em></h2>
+            <h2>Objectif 16ms</h2>
             <div class="content__main">
-                <img src="images/navigateur3.svg" />
-                <video muted controls>
-                    <source src="videos/reflow.mp4" type="video/mp4">
-                </video>
-                <cite>&mdash; CSSReflow by Mozilla,
-                    <a href="http://pixeln3rd.github.io/cssreflow/">bit.ly/cssreflow</a>
+                <p>Lorsqu'on anime une transformation sur un élément, on reste dans la composition</p>
+                <img src="images/NavigateurAnim3.svg" />
+                <cite>&mdash; Paul Lewis (Google),
+                    <a href="https://csstriggers.com/">https://csstriggers.com</a>
                 </cite>
             </div>
         </div>
@@ -270,188 +270,7 @@
 
     <section>
         <div class="content">
-            <h2>1. La mise en page <em>(Layout / Reflow)</em></h2>
-            <div class="content__main">
-                <img src="images/navigateur3.svg" />
-                <p>Détecter les reflows (Console de Firefox)</p>
-                <video  muted loop controls>
-                    <source src="videos/reflow-micro.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-    </section>
-
-
-    <section>
-        <div class="content content--card">
-            <h1>Zoom sur</h1>
-            <div>2. Calculer chaque pixels <em>(Painting / Draw)</em></div>
-        </div>
-    </section>
-
-
-    <section>
-        <div class="content">
-            <h2>2. Calculer chaque pixels <em>(Painting / Draw)</em></h2>
-            <div class="content__main">
-                <img src="images/navigateur3b.svg" />
-                <p>Calcule tous les styles visuels</p>
-                <ul>
-                    <li>Le texte</li>
-                    <li>Le fond</li>
-                    <li>Les bordures</li>
-                    <li>Les ombres</li>
-                    <li>etc.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-
-    <section>
-        <div class="content">
-            <h2>2. Calculer chaque pixels <em>(Painting / Draw)</em></h2>
-            <div class="content__main">
-                <img src="images/navigateur3b.svg" />
-                <p>Détecter les repaints (Console de Chrome)</p>
-                <video  muted loop controls>
-                    <source src="videos/repaint.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-    </section>
-
-
-    <section>
-        <div class="content">
-            <h2>2. Calculer chaque pixels <em>(Painting / Draw)</em></h2>
-            <div class="content__main">
-                <img src="images/navigateur3b.svg" />
-                <p>Investiguer les repaints (Timeline de Chrome)</p>
-                <img src="images/paint.png" />
-            </div>
-        </div>
-    </section>
-
-
-    <section>
-        <div class="content content--card">
-            <h1>Zoom sur</h1>
-            <div>3. Composition</div>
-        </div>
-    </section>
-
-
-    <section>
-        <div class="content">
-            <h2>3. Composition</h2>
-            <div class="content__main">
-                <img src="images/navigateur3c.svg" />
-                <p>La composition est très rapide pour</p>
-                <ul>
-                    <li>Dessiner une image à l'écran</li>
-                    <li>Dessiner la même image, encore</li>
-                    <li>Appliquer une opération sur une image<br>
-                        <small>opération matricielle, mélange d'images, transparence, etc.</small>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-
-    <section>
-        <div class="content">
-            <h2>3. Composition</h2>
-            <div class="content__main">
-                <img src="images/navigateur3c.svg" />
-                <p>Le fonctionnement normal</p>
-                <img src="images/gpu-init.png" />
-            </div>
-        </div>
-    </section>
-
-
-    <section>
-        <div class="content">
-            <h2>3. Composition</h2>
-            <div class="content__main">
-                <img src="images/navigateur3c.svg" />
-                <p>Lors d'une transition sur la hauteur</p>
-                <img src="images/gpu-height.png" />
-            </div>
-        </div>
-    </section>
-
-
-    <section>
-        <div class="content">
-            <h2>3. Composition</h2>
-            <div class="content__main">
-                <img src="images/navigateur3c.svg" />
-                <p>Lors d'une transition sur une transformation</p>
-                <img src="images/gpu-transform.png" />
-                Source <a href="http://blogs.adobe.com/webplatform/2014/03/18/css-animations-and-transitions-performance/">
-                    bit.ly/inside-the-browser
-                </a>
-            </div>
-        </div>
-    </section>
-
-
-    <section>
-        <div class="content content--card">
-            <h1>Astuces pour améliorer</h1>
-            <div>les performances</div>
-        </div>
-    </section>
-
-
-    <section>
-        <div class="content">
-            <h2>Astuces pour améliorer les performances</h2>
-            <div class="content__main">
-                <p>
-                    Ne pas faire de transition ou d'animation CSS
-                    avec une autre propriété que
-                </p>
-                <ul>
-                    <li><code>opacity</code></li>
-                    <li><code>transform</code></li>
-                    <li><code>filter</code></li>
-                </ul>
-            </div>
-        </div>
-        <div class="img-corner">
-            <img width="300" src="images/marteau.png" />
-            <img style="margin-bottom: -40px" width="300" src="images/clou.png" />
-        </div>
-    </section>
-
-
-    <section>
-        <div class="content">
-            <h2>Astuces pour améliorer les performances</h2>
-            <div class="content__main">
-                <p>Pour animez l'ajout d'une ombre sur un élément</p>
-                <ul>
-                    <li>Séparer l'ombre sur un élément à part</li>
-                    <li>Animer l'opacité de cet élément</li>
-                </ul>
-                <img src="images/box-shadow.gif" />
-                <cite>&mdash; Tobias Ahlin,
-                    <a href="http://tobiasahlin.com/blog/how-to-animate-box-shadow/">
-                        http://bit.ly/animate-shadow
-                    </a>
-                </cite>
-            </div>
-        </div>
-    </section>
-
-
-    <section>
-        <div class="content">
-            <h2>Des exemples d'optimisation</h2>
+            <h2>Objectif 16ms</h2>
             <div class="content__main">
                 <p>
                     Ne pas faire de transition ou d'animation CSS
@@ -472,16 +291,23 @@
 
 
     <section>
+        <div class="content content--card">
+            <h1>Des outils</h1>
+            <small class="classy">pour</small>
+            <div>Investiguer</div>
+        </div>
+    </section>
+
+
+    <section>
         <div class="content">
-            <h2>Astuces pour améliorer les performances</h2>
+            <h2>Des outils pour investiguer</h2>
             <div class="content__main">
-                <p>Les chevauchements sont propices au repaint</p>
-                <ul>
-                    <li><b>position: fixed</b></li>
-                    <li>position: absolute</li>
-                    <li>overflow: visible</li>
-                    <li>box-shadow</li>
-                </ul>
+                <img src="images/navigateur3.svg" />
+                <p>Détecter les reflows (Console de Firefox)</p>
+                <video  muted loop controls>
+                    <source src="videos/reflow-micro.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
     </section>
@@ -489,8 +315,35 @@
 
     <section>
         <div class="content">
-            <h2>Astuces pour améliorer les performances</h2>
+            <h2>Des outils pour investiguer</h2>
             <div class="content__main">
+                <img src="images/navigateur3b.svg" />
+                <p>Détecter les repaints (Console de Chrome)</p>
+                <video  muted loop controls>
+                    <source src="videos/repaint.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>Des outils pour investiguer</h2>
+            <div class="content__main">
+                <img src="images/navigateur3b.svg" />
+                <p>Investiguer les repaints (Timeline de Chrome)</p>
+                <img src="images/paint.png" />
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>Des outils pour investiguer</h2>
+            <div class="content__main">
+                <img src="images/navigateur3b.svg" />
                 <p>Les éléments fixes sont redessinés au défilement </p>
                 <video  muted loop controls>
                     <source src="videos/repaint-fixed.mp4" type="video/mp4">
@@ -501,14 +354,21 @@
 
 
     <section>
+        <div class="content content--card">
+            <h1>Des retours d'expériences</h1>
+        </div>
+    </section>
+
+
+    <section>
         <div class="content">
-            <h2>Astuces pour améliorer les performances</h2>
+            <h2>Des retours d'expériences</h2>
             <div class="content__main">
                 <p>Vous pouvez créer un nouveau layer en appliquant <code>perspective(1px)</code>*</p>
                 <video  muted loop controls>
                     <source src="videos/repaint-translateZ.mp4" type="video/mp4">
                 </video>
-                <p>* Attention aux doigts !</p>
+                <p>* Attention quand même aux hacks magiques !</p>
             </div>
         </div>
     </section>
@@ -516,7 +376,7 @@
 
     <section>
         <div class="content">
-            <h2>Astuces pour améliorer les performances</h2>
+            <h2>Des retours d'expériences</h2>
             <div class="content__main">
                 <p>Si vous avez une image de fond fixe au défilement</p>
                 <ul>
@@ -534,6 +394,26 @@
 
 
     <section>
+        <div class="content">
+            <h2>Des retours d'expériences</h2>
+            <div class="content__main">
+                <p>Pour animez l'ajout d'une ombre sur un élément</p>
+                <ul>
+                    <li>Séparer l'ombre sur un élément à part</li>
+                    <li>Animer l'opacité de cet élément</li>
+                </ul>
+                <img src="images/box-shadow.gif" />
+                <cite>&mdash; Tobias Ahlin,
+                    <a href="http://tobiasahlin.com/blog/how-to-animate-box-shadow/">
+                        http://bit.ly/animate-shadow
+                    </a>
+                </cite>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
         <div class="content content--card">
             <h1>Conclusion</h1>
         </div>
@@ -542,7 +422,7 @@
 
     <section>
         <div class="content">
-            <h2>Les retours d'expérience</h2>
+            <h2>Conclusion</h2>
             <div class="content__main">
                 <p>
                     Ne pas faire de transition ou d'animation CSS
@@ -565,14 +445,30 @@
     <section>
         <div class="content content--card">
             <h1>Merci ;)</h1>
-            <div>Des questions ? Maintenant, @iamtzi ou hello@tzi.fr</div>
+            <div>tzi.fr ou @iamtzi</div>
         </div>
     </section>
 
 
     <section>
         <div class="content">
-            <h2>1. La mise en page <em>(Layout / Reflow)</em></h2>
+            <h2>Visualiser le reflow</h2>
+            <div class="content__main">
+                <img src="images/navigateur3.svg" />
+                <video muted controls>
+                    <source src="videos/reflow.mp4" type="video/mp4">
+                </video>
+                <cite>&mdash; CSSReflow (Mozilla),
+                    <a href="http://pixeln3rd.github.io/cssreflow/">bit.ly/cssreflow</a>
+                </cite>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>Les sources du reflow</h2>
             <div class="content__main">
                 <img src="images/navigateur3.svg" />
                 <p>
@@ -595,7 +491,7 @@
 
     <section>
         <div class="content">
-            <h2>Astuces pour améliorer les performances</h2>
+            <h2>Les retours d'expérience</h2>
             <div class="content__main">
                 <p>Créer un nouveau layer</p>
                 <ul>
