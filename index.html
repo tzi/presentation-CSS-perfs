@@ -41,6 +41,34 @@
 
     <section>
         <div class="content">
+            <h2>Pourquoi les performances CSS ?</h2>
+            <div class="content__main">
+                <p>Pour Opéra, le rendu CSS est l'un des trois principaux facteurs de lenteurs JavaScript</p>
+                <p>Source <a href="https://dev.opera.com/articles/efficient-javascript/?page=3#reflow">
+                    bit.ly/opera-css-perfs
+                </a></p>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>Pourquoi les performances CSS ?</h2>
+            <div class="content__main">
+                <p>C'est une question d'<b>accessiblité</b></p>
+                <p>airbnb a diminué l'ombre dans leur design, car le rendu était trop lent...
+                    sur chromebook, et sûrement sur les appareils mobiles peu puissants.</p>
+                <p>Source <a href="http://nerds.airbnb.com/box-shadows-are-expensive-to-paint/">
+                    bit.ly/airbnb-shadow
+                </a></p>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
             <h2>La conclusion à retenir</h2>
             <div class="content__main">
                 <p>
@@ -171,7 +199,7 @@
                 <p>
                     A chaque changement, les modifications doivent prendre moins de 16ms (60fps)
                 </p>
-                <video autoplay muted loop>
+                <video  muted loop controls>
                     <source src="videos/framerate-light.mp4" type="video/mp4">
                 </video>
                 Source <a href="https://www.youtube.com/watch?v=pfiHFqnPLZ4">youtu.be/pfiHFqnPLZ4</a>
@@ -238,7 +266,7 @@
             <h2>1. La mise en page <em>(Layout / Reflow)</em></h2>
             <div class="content__main">
                 <p>Détecter les reflows (Console de Firefox)</p>
-                <video autoplay muted loop>
+                <video  muted loop controls>
                     <source src="videos/reflow-micro.mp4" type="video/mp4">
                 </video>
             </div>
@@ -267,7 +295,7 @@
             <h2>2. Calculer chaque pixels <em>(Painting / Draw)</em></h2>
             <div class="content__main">
                 <p>Détecter les repaints (Console de Chrome)</p>
-                <video autoplay muted loop>
+                <video  muted loop controls>
                     <source src="videos/repaint.mp4" type="video/mp4">
                 </video>
             </div>
@@ -335,6 +363,179 @@
                     bit.ly/inside-the-browser
                 </a>
             </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content content--card">
+            <h1>Les astuces</h1>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>Les astuces CSS</h2>
+            <div class="content__main">
+                <p>
+                    Vos transitions et animations CSS<br>
+                    doivent être limitées aux propriétés :
+                </p>
+                <ul>
+                    <li>opacity</li>
+                    <li>transform</li>
+                    <li>filter*</li>
+                    <li><a href="https://csstriggers.com/">csstriggers.com</a></li>
+                </ul>
+            </div>
+            <img style="position: fixed; right: 0; bottom: 0;" width="300" src="images/marteau.jpg" />
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>Les astuces CSS</h2>
+            <div class="content__main">
+                <p>Les chevauchements sont propices au repaint :</p>
+                <ul>
+                    <li><b>position: fixed</b></li>
+                    <li>position: absolute</li>
+                    <li>overflow: visible</li>
+                    <li>box-shadow</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>Les astuces CSS</h2>
+            <div class="content__main">
+                <p>Les éléments fixes sont redessinés au défilement : </p>
+                <video  muted loop controls>
+                    <source src="videos/repaint-fixed.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>Les astuces CSS</h2>
+            <div class="content__main">
+                <p>Dans ces cas-là, on peut créer un nouveau layer</p>
+                <ul>
+                    <li>translateZ(0)</li>
+                    <li>will-change*</li>
+                </ul>
+                <p>* Mais attention <code>will-change</code> <em>will</em> change</p>
+                <p>Source <a href="http://greensock.com/will-change">greensock.com/will-change</a></p>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>Les astuces CSS</h2>
+            <div class="content__main">
+                <p>Les éléments avec une translation en profondeur sont sur un layer différent : </p>
+                <video  muted loop controls>
+                    <source src="videos/repaint-translateZ.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content content--card">
+            <h1>Des exemples d'optimisation</h1>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>Des exemples d'optimisation</h2>
+            <div class="content__main">
+                <p>Si vous voulez animez l'ajout d'une ombre sur un élément :</p>
+                <ul>
+                    <li>Séparer l'ombre sur un élément à part</li>
+                    <li>Animer l'opacité de cet élément</li>
+                </ul>
+                <img src="images/box-shadow.gif" />
+                <p>Source <a href="http://tobiasahlin.com/blog/how-to-animate-box-shadow/">
+                    http://bit.ly/animate-shadow</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>Des exemples d'optimisation</h2>
+            <div class="content__main">
+                <p>
+                    Vos transitions et animations CSS<br>
+                    doivent être limitées aux propriétés :
+                </p>
+                <ul>
+                    <li>opacity</li>
+                    <li>transform</li>
+                    <li>filter*</li>
+                </ul>
+            </div>
+            <img style="position: fixed; right: 0; bottom: 0;" width="300" src="images/marteau.jpg" />
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>Des exemples d'optimisation</h2>
+            <div class="content__main">
+                <p>Si vous avez une image de fond fixe au défilement :</p>
+                <ul>
+                    <li>Séparer l'image sur un élément à part</li>
+                    <li>Créer un nouveau layer pour cet élément</li>
+                </ul>
+                <img src="images/background-attachment-fixed.png" />
+                <p>Source <a href="https://www.fourkitchens.com/blog/article/fix-scrolling-performance-css-will-change-property">
+                    http://bit.ly/bg-fixed-perfs</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content content--card">
+            <h1>Conclusion</h1>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>Conclusion</h2>
+            <div class="content__main">
+                <p>
+                    Vos transitions et animations CSS<br>
+                    doivent être limitées aux propriétés :
+                </p>
+                <ul>
+                    <li>opacity</li>
+                    <li>transform</li>
+                    <li>filter*</li>
+                </ul>
+            </div>
+            <img style="position: fixed; right: 0; bottom: 0;" width="300" src="images/marteau.jpg" />
         </div>
     </section>
 
