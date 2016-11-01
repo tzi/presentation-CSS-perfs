@@ -138,6 +138,18 @@ video {
     margin: 0 auto;
 }
 
+.img-corner {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-width: 30%;
+    overflow: hidden;
+}
+.img-corner > :last-child {
+    position: absolute;
+    bottom: 0;
+}
+
 .content--card h1,
 .content--card h2 {
     margin-bottom: -20px;
