@@ -43,7 +43,13 @@
         <div class="content">
             <h2>Pourquoi les performances CSS ?</h2>
             <div class="content__main">
+                <p>C'est une question d'<b>accessiblité</b></p>
+                <p>airbnb a diminué l'ombre dans leur design, car le rendu était trop lent.</p>
                 <p>Pour Opéra, le rendu CSS est l'un des trois principaux facteurs de lenteurs JavaScript</p>
+
+                <p>Source <a href="http://nerds.airbnb.com/box-shadows-are-expensive-to-paint/">
+                    bit.ly/airbnb-shadow
+                </a></p>
                 <p>Source <a href="https://dev.opera.com/articles/efficient-javascript/?page=3#reflow">
                     bit.ly/opera-css-perfs
                 </a></p>
@@ -55,21 +61,6 @@
     <section>
         <div class="content">
             <h2>Pourquoi les performances CSS ?</h2>
-            <div class="content__main">
-                <p>C'est une question d'<b>accessiblité</b></p>
-                <p>airbnb a diminué l'ombre dans leur design, car le rendu était trop lent...
-                    sur chromebook, et sûrement sur les appareils mobiles peu puissants.</p>
-                <p>Source <a href="http://nerds.airbnb.com/box-shadows-are-expensive-to-paint/">
-                    bit.ly/airbnb-shadow
-                </a></p>
-            </div>
-        </div>
-    </section>
-
-
-    <section>
-        <div class="content">
-            <h2>La conclusion à retenir</h2>
             <div class="content__main">
                 <p>
                     Vos transitions et animations CSS<br>
@@ -91,7 +82,20 @@
 
     <section>
         <div class="content">
-            <h2>La conclusion à retenir</h2>
+            <h2>Pourquoi les performances CSS ?</h2>
+            <div class="content__main">
+                <p>
+                    On va essayer de diminuer la zone "boîte noire"
+                </p>
+                <img src="images/navigateur1.svg" />
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>Pourquoi les performances CSS ?</h2>
             <div class="content__main">
                 <p>
                     Vos transitions et animations CSS<br>
@@ -151,31 +155,13 @@
             <h2>Du CSS aux pixels</h2>
             <div class="content__main">
                 <p>
-                    Le fil principal se charge de :
-                </p>
-                <ul>
-                    <li>L'exécution de JavaScript</li>
-                    <li>Calculer les règles CSS de chaque éléments</li>
-                    <li>La mise en page <em>(Layout / Reflow)</em></li>
-                    <li>Calculer chaque pixels <em>(Painting / Draw)</em></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-
-    <section>
-        <div class="content">
-            <h2>Du CSS aux pixels</h2>
-            <div class="content__main">
-                <p>
                     Le fil de composition se charge de :
                 </p>
                 <ul>
                     <li>Dessiner les pixels sur l'écran</li>
-                    <li>Déterminer les parties visibles de la page</li>
                     <li>Déplacer les éléments lors du défilement</li>
                 </ul>
+                <img src="images/navigateur1b.svg" />
             </div>
         </div>
     </section>
@@ -186,10 +172,28 @@
             <h2>Du CSS aux pixels</h2>
             <div class="content__main">
                 <p>
-                    A chaque changement, on invalide la suite de la chaîne
+                    Le fil principal se charge de :
                 </p>
-                <img src="images/processing-pipeline.svg" />
-                Source <a href="https://hpbn.co/primer-on-web-performance/">bit.ly/process-pipeline</a>
+                <ul>
+                    <li>Calculer les règles CSS</li>
+                    <li>La mise en page <em>(Layout / Reflow)</em></li>
+                    <li>Calculer chaque pixels <em>(Painting / Draw)</em></li>
+                </ul>
+                <img src="images/navigateur2.svg" />
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>Du CSS aux pixels</h2>
+            <div class="content__main">
+                <p>
+                    A chaque changement, on repart à un endroit précis de la chaîne
+                </p>
+                <img src="images/navigateur2b.svg" />
+                <p>Source <a href="https://hpbn.co/primer-on-web-performance/">bit.ly/process-pipeline</a></p>
             </div>
         </div>
     </section>
@@ -212,9 +216,18 @@
 
 
     <section>
+        <div class="content content--card">
+            <h1>Zoom sur</h1>
+            <div>La mise en page <em>(Layout / Reflow)</em></div>
+        </div>
+    </section>
+
+
+    <section>
         <div class="content">
             <h2>1. La mise en page <em>(Layout / Reflow)</em></h2>
             <div class="content__main">
+                <img src="images/navigateur3.svg" />
                 <p>
                     C'est l'algorithme qui détermine la position et la taille des boîtes
                     en fonction de leurs interactions avec leurs boîtes frères et ancètres.
@@ -254,7 +267,6 @@
         <div class="content">
             <h2>1. La mise en page <em>(Layout / Reflow)</em></h2>
             <div class="content__main">
-                <p></p>
                 <video muted controls>
                     <source src="videos/reflow.mp4" type="video/mp4">
                 </video>
