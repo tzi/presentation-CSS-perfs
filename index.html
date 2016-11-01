@@ -28,11 +28,11 @@
         <div class="content">
             <h2>Pourquoi les performances CSS ?</h2>
             <div class="content__main">
-                <p>Pour obtenir des interactions fluides :</p>
+                <p>Pour obtenir des interactions fluides</p>
                 <ul>
                     <li>Défilement <em>(scroll)</em></li>
-                    <li>Transitions et animations CSS</li>
-                    <li>Manipulation du DOM en JavaScript</li>
+                    <li>Transition et animation CSS</li>
+                    <li>Manipulation du contenu</li>
                 </ul>
             </div>
         </div>
@@ -43,16 +43,21 @@
         <div class="content">
             <h2>Pourquoi les performances CSS ?</h2>
             <div class="content__main">
-                <p>C'est une question d'<b>accessiblité</b></p>
-                <p>airbnb a diminué l'ombre dans leur design, car le rendu était trop lent.</p>
-                <p>Pour Opéra, le rendu CSS est l'un des trois principaux facteurs de lenteurs JavaScript</p>
-
-                <p>Source <a href="http://nerds.airbnb.com/box-shadows-are-expensive-to-paint/">
-                    bit.ly/airbnb-shadow
-                </a></p>
-                <p>Source <a href="https://dev.opera.com/articles/efficient-javascript/?page=3#reflow">
-                    bit.ly/opera-css-perfs
-                </a></p>
+                <p>Pour l'image, l'immersion  et l'accessiblité !</p>
+                
+                <p>Parce que le rendu était trop lent, ils ont diminué l'ombre dans leur design.</p>
+                <cite>&mdash; airbnb,
+                    <a href="http://nerds.airbnb.com/box-shadows-are-expensive-to-paint/">
+                        bit.ly/airbnb-shadow
+                    </a>
+                </cite>
+                
+                <p>Le rendu CSS est l'un des trois principaux facteurs de lenteurs JavaScript.</p>
+                <cite>&mdash; Opera,
+                    <a href="https://dev.opera.com/articles/efficient-javascript/?page=3#reflow">
+                        bit.ly/opera-css-perfs
+                    </a>
+                </cite>
             </div>
         </div>
     </section>
@@ -63,15 +68,15 @@
             <h2>Pourquoi les performances CSS ?</h2>
             <div class="content__main">
                 <p>
-                    Vos transitions et animations CSS<br>
-                    doivent être limitées aux propriétés :
+                    Ne pas faire de transition ou d'animation CSS
+                    avec une autre propriété que
                 </p>
                 <ul>
-                    <li>opacity</li>
-                    <li>transform<br>
+                    <li><code>opacity</code></li>
+                    <li><code>transform</code><br>
                         <small><em>(translation, rotation, redimensionnement, ...)</em></small>
                     </li>
-                    <li>filter*<br>
+                    <li><code>filter</code><br>
                         <small><em>(flou, luminuosité, contraste, niveau de gris, ...)</em></small>
                     </li>
                 </ul>
@@ -98,13 +103,13 @@
             <h2>Pourquoi les performances CSS ?</h2>
             <div class="content__main">
                 <p>
-                    Vos transitions et animations CSS<br>
-                    doivent être limitées aux propriétés :
+                    Ne pas faire de transition ou d'animation CSS
+                    avec une autre propriété que
                 </p>
                 <ul>
-                    <li>opacity</li>
-                    <li>transform</li>
-                    <li>filter*</li>
+                    <li><code>opacity</code></li>
+                    <li><code>transform</code></li>
+                    <li><code>filter</code></li>
                 </ul>
             </div>
         </div>
@@ -139,7 +144,7 @@
             <div class="content__main">
                 <p>
                     Les navigateurs web ont, <em>à peu près,</em><br>
-                    deux fils d'exécution pour le rendu :
+                    deux fils d'exécution pour le rendu
                 </p>
                 <ul>
                     <li>Le principal <em>(Main)</em></li>
@@ -155,7 +160,7 @@
             <h2>Du CSS aux pixels</h2>
             <div class="content__main">
                 <p>
-                    Le fil de composition se charge de :
+                    Le fil de composition se charge de
                 </p>
                 <ul>
                     <li>Dessiner les pixels sur l'écran</li>
@@ -172,7 +177,7 @@
             <h2>Du CSS aux pixels</h2>
             <div class="content__main">
                 <p>
-                    Le fil principal se charge de :
+                    Le fil principal se charge de
                 </p>
                 <ul>
                     <li>Calculer les règles CSS</li>
@@ -193,7 +198,9 @@
                     A chaque changement, on repart à un endroit précis de la chaîne
                 </p>
                 <img src="images/navigateur2b.svg" />
-                <p>Source <a href="https://hpbn.co/primer-on-web-performance/">bit.ly/process-pipeline</a></p>
+                <cite>&mdash; Ilya Grigorik,
+                    <a href="https://hpbn.co/primer-on-web-performance/">bit.ly/process-pipeline</a>
+                </cite>
             </div>
         </div>
     </section>
@@ -209,7 +216,9 @@
                 <video  muted loop controls>
                     <source src="videos/framerate-light.mp4" type="video/mp4">
                 </video>
-                Source <a href="https://www.youtube.com/watch?v=pfiHFqnPLZ4">youtu.be/pfiHFqnPLZ4</a>
+                <cite>&mdash; Youtube,
+                    <a href="https://www.youtube.com/watch?v=pfiHFqnPLZ4">youtu.be/pfiHFqnPLZ4</a>
+                </cite>
             </div>
         </div>
     </section>
@@ -235,30 +244,9 @@
                 <p>
                     Aucune action utilisateur n'est autorisé lors de la mise en page.
                 </p>
-                Source <a href="https://developers.google.com/speed/articles/reflow">bit.ly/layout-engine</a>
-            </div>
-        </div>
-    </section>
-
-
-    <section>
-        <div class="content">
-            <h2>1. La mise en page <em>(Layout / Reflow)</em></h2>
-            <div class="content__main">
-                <img src="images/navigateur3.svg" />
-                <p>
-                    Elle est déclanchée par :
-                </p>
-                <ul>
-                    <li>Modification du DOM, dont le contenu</li>
-                    <li>Prise de mesure<br>
-                        <small>(<code>offsetHeight</code> ou <code>getComputedStyle</code>)</small>
-                    </li>
-                    <li>Modification de l'attribut class</li>
-                    <li>Modification des styles CSS</li>
-                    <li>Le redimenssionnement de la fenêtre</li>
-                    <li>Le scroll</li>
-                </ul>
+                <cite>&mdash; Google,
+                    <a href="https://developers.google.com/speed/articles/reflow">bit.ly/layout-engine</a>
+                </cite>
             </div>
         </div>
     </section>
@@ -272,7 +260,9 @@
                 <video muted controls>
                     <source src="videos/reflow.mp4" type="video/mp4">
                 </video>
-                Source <a href="http://pixeln3rd.github.io/cssreflow/">bit.ly/cssreflow</a>
+                <cite>&mdash; CSSReflow by Mozilla,
+                    <a href="http://pixeln3rd.github.io/cssreflow/">bit.ly/cssreflow</a>
+                </cite>
             </div>
         </div>
     </section>
@@ -305,12 +295,13 @@
             <h2>2. Calculer chaque pixels <em>(Painting / Draw)</em></h2>
             <div class="content__main">
                 <img src="images/navigateur3b.svg" />
-                <p>Applique tous les styles visuels :</p>
+                <p>Calcule tous les styles visuels</p>
                 <ul>
-                    <li>le texte</li>
+                    <li>Le texte</li>
                     <li>Le fond</li>
                     <li>Les bordures</li>
-                    <li>les ombres</li>
+                    <li>Les ombres</li>
+                    <li>etc.</li>
                 </ul>
             </div>
         </div>
@@ -356,13 +347,13 @@
             <h2>3. Composition</h2>
             <div class="content__main">
                 <img src="images/navigateur3c.svg" />
-                <p>La composition GPU est très rapide pour :</p>
+                <p>La composition est très rapide pour</p>
                 <ul>
                     <li>Dessiner une image à l'écran</li>
+                    <li>Dessiner la même image, encore</li>
                     <li>Appliquer une opération sur une image<br>
                         <small>opération matricielle, mélange d'images, transparence, etc.</small>
                     </li>
-                    <li>Dessiner la même image encore et encore</li>
                 </ul>
             </div>
         </div>
@@ -374,7 +365,7 @@
             <h2>3. Composition</h2>
             <div class="content__main">
                 <img src="images/navigateur3c.svg" />
-                <p>Le fonctionnement normal :</p>
+                <p>Le fonctionnement normal</p>
                 <img src="images/gpu-init.png" />
             </div>
         </div>
@@ -386,7 +377,7 @@
             <h2>3. Composition</h2>
             <div class="content__main">
                 <img src="images/navigateur3c.svg" />
-                <p>Lors d'une transition sur la hauteur :</p>
+                <p>Lors d'une transition sur la hauteur</p>
                 <img src="images/gpu-height.png" />
             </div>
         </div>
@@ -398,7 +389,7 @@
             <h2>3. Composition</h2>
             <div class="content__main">
                 <img src="images/navigateur3c.svg" />
-                <p>Lors d'une transition sur une transformation :</p>
+                <p>Lors d'une transition sur une transformation</p>
                 <img src="images/gpu-transform.png" />
                 Source <a href="http://blogs.adobe.com/webplatform/2014/03/18/css-animations-and-transitions-performance/">
                     bit.ly/inside-the-browser
@@ -410,25 +401,25 @@
 
     <section>
         <div class="content content--card">
-            <h1>Les retours d'expérience</h1>
+            <h1>Astuces pour améliorer</h1>
+            <div>les performances</div>
         </div>
     </section>
 
 
     <section>
         <div class="content">
-            <h2>Les astuces CSS</h2>
+            <h2>Astuces pour améliorer les performances</h2>
             <div class="content__main">
                 <p>
-                    Vos transitions et animations CSS<br>
-                    doivent être limitées aux propriétés :
+                    Ne pas faire de transition ou d'animation CSS
+                    avec une autre propriété que
                 </p>
                 <ul>
-                    <li>opacity</li>
-                    <li>transform</li>
-                    <li>filter*</li>
+                    <li><code>opacity</code></li>
+                    <li><code>transform</code></li>
+                    <li><code>filter</code></li>
                 </ul>
-                <p>Plus de détails sur <a href="https://csstriggers.com/">csstriggers.com</a></p>
             </div>
         </div>
         <div class="img-corner">
@@ -440,9 +431,51 @@
 
     <section>
         <div class="content">
-            <h2>Les astuces CSS</h2>
+            <h2>Astuces pour améliorer les performances</h2>
             <div class="content__main">
-                <p>Les chevauchements sont propices au repaint :</p>
+                <p>Pour animez l'ajout d'une ombre sur un élément</p>
+                <ul>
+                    <li>Séparer l'ombre sur un élément à part</li>
+                    <li>Animer l'opacité de cet élément</li>
+                </ul>
+                <img src="images/box-shadow.gif" />
+                <cite>&mdash; Tobias Ahlin,
+                    <a href="http://tobiasahlin.com/blog/how-to-animate-box-shadow/">
+                        http://bit.ly/animate-shadow
+                    </a>
+                </cite>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>Des exemples d'optimisation</h2>
+            <div class="content__main">
+                <p>
+                    Ne pas faire de transition ou d'animation CSS
+                    avec une autre propriété que
+                </p>
+                <ul>
+                    <li><code>opacity</code></li>
+                    <li><code>transform</code></li>
+                    <li><code>filter</code></li>
+                </ul>
+            </div>
+        </div>
+        <div class="img-corner">
+            <img width="300" src="images/marteau.png" />
+            <img style="margin-bottom: -70px" width="300" src="images/clou.png" />
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>Astuces pour améliorer les performances</h2>
+            <div class="content__main">
+                <p>Les chevauchements sont propices au repaint</p>
                 <ul>
                     <li><b>position: fixed</b></li>
                     <li>position: absolute</li>
@@ -456,9 +489,9 @@
 
     <section>
         <div class="content">
-            <h2>Les astuces CSS</h2>
+            <h2>Astuces pour améliorer les performances</h2>
             <div class="content__main">
-                <p>Les éléments fixes sont redessinés au défilement : </p>
+                <p>Les éléments fixes sont redessinés au défilement </p>
                 <video  muted loop controls>
                     <source src="videos/repaint-fixed.mp4" type="video/mp4">
                 </video>
@@ -469,53 +502,13 @@
 
     <section>
         <div class="content">
-            <h2>Les astuces CSS</h2>
+            <h2>Astuces pour améliorer les performances</h2>
             <div class="content__main">
-                <p>Dans ces cas-là, on peut créer un nouveau layer</p>
-                <ul>
-                    <li>translateZ(0)</li>
-                    <li>will-change*</li>
-                </ul>
-                <p>* Mais attention <code>will-change</code> <em>will</em> change</p>
-                <p>Source <a href="http://greensock.com/will-change">greensock.com/will-change</a></p>
-            </div>
-        </div>
-    </section>
-
-
-    <section>
-        <div class="content">
-            <h2>Les astuces CSS</h2>
-            <div class="content__main">
-                <p>Les éléments avec une translation en profondeur sont sur un layer différent : </p>
+                <p>Vous pouvez créer un nouveau layer en appliquant <code>perspective(1px)</code>*</p>
                 <video  muted loop controls>
                     <source src="videos/repaint-translateZ.mp4" type="video/mp4">
                 </video>
-            </div>
-        </div>
-    </section>
-
-
-    <section>
-        <div class="content content--card">
-            <h1>Des exemples d'optimisation</h1>
-        </div>
-    </section>
-
-
-    <section>
-        <div class="content">
-            <h2>Des exemples d'optimisation</h2>
-            <div class="content__main">
-                <p>Si vous voulez animez l'ajout d'une ombre sur un élément :</p>
-                <ul>
-                    <li>Séparer l'ombre sur un élément à part</li>
-                    <li>Animer l'opacité de cet élément</li>
-                </ul>
-                <img src="images/box-shadow.gif" />
-                <p>Source <a href="http://tobiasahlin.com/blog/how-to-animate-box-shadow/">
-                    http://bit.ly/animate-shadow</a>
-                </p>
+                <p>* Attention aux doigts !</p>
             </div>
         </div>
     </section>
@@ -523,39 +516,18 @@
 
     <section>
         <div class="content">
-            <h2>Des exemples d'optimisation</h2>
+            <h2>Astuces pour améliorer les performances</h2>
             <div class="content__main">
-                <p>
-                    Vos transitions et animations CSS<br>
-                    doivent être limitées aux propriétés :
-                </p>
-                <ul>
-                    <li>opacity</li>
-                    <li>transform</li>
-                    <li>filter*</li>
-                </ul>
-            </div>
-        </div>
-        <div class="img-corner">
-            <img width="300" src="images/marteau.png" />
-            <img style="margin-bottom: -70px" width="300" src="images/clou.png" />
-        </div>
-    </section>
-
-
-    <section>
-        <div class="content">
-            <h2>Des exemples d'optimisation</h2>
-            <div class="content__main">
-                <p>Si vous avez une image de fond fixe au défilement :</p>
+                <p>Si vous avez une image de fond fixe au défilement</p>
                 <ul>
                     <li>Séparer l'image sur un élément à part</li>
                     <li>Créer un nouveau layer pour cet élément</li>
                 </ul>
-                <img src="images/background-attachment-fixed.png" />
-                <p>Source <a href="https://www.fourkitchens.com/blog/article/fix-scrolling-performance-css-will-change-property">
-                    http://bit.ly/bg-fixed-perfs</a>
-                </p>
+                <cite>&mdash; Four Kitchens,
+                    <a href="https://www.fourkitchens.com/blog/article/fix-scrolling-performance-css-will-change-property">
+                        http://bit.ly/bg-fixed-perfs
+                    </a>
+                </cite>
             </div>
         </div>
     </section>
@@ -570,22 +542,70 @@
 
     <section>
         <div class="content">
-            <h2>Conclusion</h2>
+            <h2>Les retours d'expérience</h2>
             <div class="content__main">
                 <p>
-                    Vos transitions et animations CSS<br>
-                    doivent être limitées aux propriétés :
+                    Ne pas faire de transition ou d'animation CSS
+                    avec une autre propriété que
                 </p>
                 <ul>
-                    <li>opacity</li>
-                    <li>transform</li>
-                    <li>filter*</li>
+                    <li><code>opacity</code></li>
+                    <li><code>transform</code></li>
+                    <li><code>filter</code></li>
                 </ul>
             </div>
         </div>
         <div class="img-corner">
             <img width="300" src="images/marteau.png" />
             <img style="margin-bottom: -90px" width="300" src="images/clou.png" />
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content content--card">
+            <h1>Merci ;)</h1>
+            <div>Des questions ? Maintenant, @iamtzi ou hello@tzi.fr</div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>1. La mise en page <em>(Layout / Reflow)</em></h2>
+            <div class="content__main">
+                <img src="images/navigateur3.svg" />
+                <p>
+                    Elle est déclanchée par
+                </p>
+                <ul>
+                    <li>Modification du DOM, dont le contenu</li>
+                    <li>Prise de mesure<br>
+                        <small>(<code>offsetHeight</code> ou <code>getComputedStyle</code>)</small>
+                    </li>
+                    <li>Modification de l'attribut class</li>
+                    <li>Modification des styles CSS</li>
+                    <li>Le redimenssionnement de la fenêtre</li>
+                    <li>Le scroll</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="content">
+            <h2>Astuces pour améliorer les performances</h2>
+            <div class="content__main">
+                <p>Créer un nouveau layer</p>
+                <ul>
+                    <li><code>translateZ(0)</code></li>
+                    <li><code>perspective(1px)</code></li>
+                    <li><code>will-change</code>*</li>
+                </ul>
+                <p>* Mais attention <code>will-change</code> <em>will</em> change</p>
+                <cite>&mdash; GreenSock, <a href="http://greensock.com/will-change">greensock.com/will-change</a></cite>
+            </div>
         </div>
     </section>
 

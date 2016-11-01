@@ -97,11 +97,13 @@ b {
 
 ol,
 ul {
-    font-size: inherit;
     display: block;
+    margin: 1em auto;
+    padding-left: 1.5em;
+    font-size: inherit;
 }
 ul {
-    list-style: disc inside;
+    list-style: disc outside;
 }
 li {
     margin-bottom: 0.3em
@@ -127,6 +129,19 @@ blockquote small {
     margin-top: 1em;
     display: block;
     text-align: right;
+}
+
+cite {
+    display: block;
+    margin-top: -0.5em;
+    
+    font-size: 0.8em;
+}
+
+code {
+    padding: 0.1em 0.5em;
+    background: #CDDFF0;
+    font-family: monospace, monospace;
 }
 
 img,
