@@ -29,7 +29,7 @@ section {
 
 .content {
     display: table-cell;
-    padding: 20px 40px;
+    padding: 20px 40px 50px;
     vertical-align: top;
 }
 
@@ -38,6 +38,10 @@ section {
     text-align: center;
     background: #F01422;
     background: linear-gradient(to bottom, #F01422, #D2111E);
+
+    /* Go over the slide number */
+    position: relative;
+    z-index: 1;
 
     color: white;
     font-size: 1.5em;
@@ -165,4 +169,19 @@ section .classyNote {
     color: #FFF;
     background: #111111;
     padding: 1em;
+}
+
+/* Slide number */
+.bespoke-slidenumber {
+    position: absolute;
+    left: 0.25em;
+    bottom: 0.25em;
+    font-family: "Istok Web", sans-serif;
+}
+.bespoke-slidenumber-current::before {
+    content: '#';
+}
+.bespoke-slidenumber-divider,
+.bespoke-slidenumber-overall {
+    display: none
 }
