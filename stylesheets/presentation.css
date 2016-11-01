@@ -54,9 +54,7 @@ section {
 }
 
 .content__main {
-    width: -moz-fit-content;    /* Firefox */
-    width: -webkit-fit-content; /* Chrome */
-    width: fit-content; /* Chrome */
+    width: 100%;
     max-width: 640px;
     margin: auto;
 }
@@ -144,6 +142,9 @@ video {
     bottom: 0;
     max-width: 30%;
     overflow: hidden;
+}
+.img-corner > * {
+    margin: 0 auto;
 }
 .img-corner > :last-child {
     position: absolute;
