@@ -10,6 +10,24 @@ body {
     color: #494f56;
 }
 
+@media (max-width: 639px) {
+    body {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 559px) {
+    body {
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 479px) {
+    body {
+        font-size: 16px;
+    }
+}
+
 section {
     position: relative;
     background-position: center center;
